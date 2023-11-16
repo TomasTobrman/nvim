@@ -24,6 +24,8 @@ return {
 			clangd = { filetypes = { 'c', 'cpp' } },
 
 			jdtls = { filetypes = { 'java' } },
+
+			intelephense = { filetypes = { 'php' } },
 		}
 
 		local lspconfig = require('lspconfig')
