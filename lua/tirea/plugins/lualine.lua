@@ -34,7 +34,7 @@ return {
 						cond = lazy_status.has_updates,
 					},
 				},
-				lualine_x = {},
+				lualine_x = { 'filetype' },
 				lualine_y = { 'progress' },
 				lualine_z = { 'location' },
 			},
