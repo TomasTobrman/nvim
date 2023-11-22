@@ -14,14 +14,19 @@ return {
 
 		telescope.setup({
 			defaults = {
+				file_ignore_patterns = {
+					'build',
+					'vendor',
+					'node_modules',
+				},
 				mappings = {
 					i = {
 						['<c-k>'] = actions.move_selection_previous,
 						['<c-j>'] = actions.move_selection_next,
 						['<c-q>'] = actions.send_selected_to_qflist + actions.open_qflist,
-					}
-				}
-			}
+					},
+				},
+			},
 		})
 
 		telescope.load_extension('fzf')
@@ -31,5 +36,5 @@ return {
 		vim.keymap.set('n', '<leader>fr', '<cmd>Telescope oldfiles<cr>', { desc = '[F]ind [R]ecent' })
 		vim.keymap.set('n', '<leader>fs', '<cmd>Telescope live_grep<cr>', { desc = '[F]ind [S]tring' })
 		vim.keymap.set('n', '<leader>fc', '<cmd>Telescope grep_string<cr>', { desc = '[F]ind [C]urrent' })
-	end
+	end,
 }
