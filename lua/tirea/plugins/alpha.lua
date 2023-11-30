@@ -50,19 +50,31 @@ return {
 		---- Highlights --------------------------------------------------------------------
 
 		for _, button in ipairs(dashboard.section.buttons.val) do
-			button.opts.hl = 'alpha2'
-			button.opts.hl_shortcut = 'alpha2'
+			button.opts.hl = 'TireaAlphaButton'
+			button.opts.hl_shortcut = 'TireaAlphaButton'
 			button.opts.cursor = 0
 			button.opts.width = 28
 		end
 
-		dashboard.section.header.opts.hl = 'alpha1'
-		dashboard.section.buttons.opts.hl = 'alpha2'
-		dashboard.section.footer.opts.hl = 'alpha3'
+		dashboard.section.header.opts.hl = 'TireaAlphaHeader'
+		dashboard.section.buttons.opts.hl = 'TireaAlphaButton'
+		dashboard.section.footer.opts.hl = 'TireaAlphaFooter'
 
 		------------------------------------------------------------------------------------
 
 		alpha.setup(dashboard.opts)
 		vim.cmd([[ autocmd FileType alpha setlocal nofoldenable ]])
+
+		-- set highlight so they load at startup
+		vim.cmd([[ highlight TireaAlphaHeader guifg=#33B1FF ]])
+		vim.cmd([[ highlight TireaAlphaButton guifg=#82CFFF ]])
+		vim.cmd([[ highlight TireaAlphaFooter guifg=#525252 ]])
+
+		-- set autocmd to reload them after a colorscheme might have cleared them
+		vim.cmd([[ autocmd ColorScheme *
+			\ highlight TireaAlphaHeader guifg=#33B1FF |
+			\ highlight TireaAlphaButton guifg=#82CFFF |
+			\ highlight TireaAlphaFooter guifg=#525252
+		]])
 	end,
 }
