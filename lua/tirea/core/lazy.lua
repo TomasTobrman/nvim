@@ -13,10 +13,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
 	{ import = 'tirea.plugins' },
-	{ import = 'tirea.plugins.lsp' },
 }, {
 	defaults = { lazy = true },
-	install = { colorscheme = { 'oxocarbon' }, },
+	install = { colorscheme = { 'oxocarbon' } },
 	checker = { enabled = true, notify = false },
 	change_detection = { notify = false },
 	performance = {
@@ -26,7 +25,7 @@ require('lazy').setup({
 				'gzip',
 				'zipPlugin',
 				'netrwPlugin',
-				'tarPlugin'
+				'tarPlugin',
 			},
 		},
 	},

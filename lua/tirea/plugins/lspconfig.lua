@@ -26,6 +26,8 @@ return {
 			jdtls = { filetypes = { 'java' } },
 
 			intelephense = { filetypes = { 'php' } },
+
+			pyright = { filetypes = { 'python' } },
 		}
 
 		local lspconfig = require('lspconfig')
@@ -55,11 +57,11 @@ return {
 			opts.desc = '[r]e[n]ame'
 			vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
 
-			opts.desc = 'Show buffer [D]iagnostics'
-			vim.keymap.set('n', '<leader>D', '<cmd>Telescope diagnostics bufnr=0<cr>', opts)
+			opts.desc = '[s]how buffer [D]iagnostics'
+			vim.keymap.set('n', '<leader>sD', '<cmd>Telescope diagnostics bufnr=0<cr>', opts)
 
-			opts.desc = 'Show line [b]iagnostics'
-			vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, opts)
+			opts.desc = '[s]how line [b]iagnostics'
+			vim.keymap.set('n', '<leader>sd', vim.diagnostic.open_float, opts)
 
 			opts.desc = 'Go to previous [d]iagnostic'
 			vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
