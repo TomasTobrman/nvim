@@ -3,6 +3,14 @@ return {
 	dependencies = {
 		'hrsh7th/cmp-nvim-lsp',
 		{ 'antosha417/nvim-lsp-file-operations', config = true },
+		{
+			'SmiteshP/nvim-navbuddy',
+			dependencies = {
+				'SmiteshP/nvim-navic',
+				'MunifTanjim/nui.nvim',
+			},
+			opts = { lsp = { auto_attach = true } },
+		},
 	},
 	event = { 'BufReadPre', 'BufNewFile' },
 	config = function()
@@ -33,8 +41,16 @@ return {
 		local lspconfig = require('lspconfig')
 		local cmp_nvim_lsp = require('cmp_nvim_lsp')
 		local opts = { noremap = true, silent = true }
-		local on_attach = function(_, bufnr)
+		local on_attach = function(client, bufnr)
 			opts.buffer = bufnr
+
+			if client.server_capabilities.documentSymbolProvider then
+				require('nvim-navic').attach(client, bufnr)
+				require('nvim-navbuddy').attach(client, bufnr)
+
+				opts.desc = 'Open NavBuddy'
+				vim.keymap.set('n', '<leader>nb', require('nvim-navbuddy').open, opts)
+			end
 
 			opts.desc = 'Show LSP [R]eferences'
 			vim.keymap.set('n', 'gR', '<cmd>Telescope lsp_references<cr>', opts)

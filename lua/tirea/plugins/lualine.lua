@@ -15,10 +15,25 @@ return {
 				component_separators = { left = ' ', right = ' ' },
 				globalstatus = true,
 				disabled_filetypes = {
-					statusline = { 'alpha' },
-					winbar = { 'alpha', 'oil' },
+					'alpha',
+					'oil',
+					'dapui_watches',
+					'dapui_breakpoints',
+					'dapui_scopes',
+					'dapui_console',
+					'dapui_stacks',
+					'dap-repl',
 				},
-				ignore_focus = { 'oil' },
+				ignore_focus = {
+					'alpha',
+					'oil',
+					'dapui_watches',
+					'dapui_breakpoints',
+					'dapui_scopes',
+					'dapui_console',
+					'dapui_stacks',
+					'dap-repl',
+				},
 				refresh = {
 					statusline = 500,
 					tabline = 500,
@@ -27,7 +42,11 @@ return {
 			},
 			sections = {
 				lualine_a = { 'mode' },
-				lualine_b = { 'branch', 'diff', 'diagnostics' },
+				lualine_b = {
+					'branch',
+					'diff',
+					'diagnostics',
+				},
 				lualine_c = {
 					{
 						lazy_status.updates,
@@ -38,11 +57,17 @@ return {
 				lualine_y = { 'progress' },
 				lualine_z = { 'location' },
 			},
-			inactive_sections = {},
-			winbar = {
+			inactive_sections = {
 				lualine_a = {},
 				lualine_b = {},
-				lualine_c = {
+				lualine_c = {},
+				lualine_x = {},
+				lualine_y = {},
+				lualine_z = {},
+			},
+			winbar = {
+				lualine_a = {},
+				lualine_b = {
 					{
 						'filename',
 						symbols = {
@@ -53,14 +78,20 @@ return {
 						},
 					},
 				},
+				lualine_c = {
+					{
+						'navic',
+						color_correction = nil,
+						navic_opts = nil,
+					},
+				},
 				lualine_x = {},
 				lualine_y = {},
 				lualine_z = {},
 			},
 			inactive_winbar = {
 				lualine_a = {},
-				lualine_b = {},
-				lualine_c = {
+				lualine_b = {
 					{
 						'filename',
 						symbols = {
@@ -69,6 +100,13 @@ return {
 							unnamed = '',
 							newfile = '',
 						},
+					},
+				},
+				lualine_c = {
+					{
+						'navic',
+						color_correction = nil,
+						navic_opts = nil,
 					},
 				},
 				lualine_x = {},
