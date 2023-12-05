@@ -23,6 +23,7 @@ return {
 				{
 					elements = {
 						'scopes',
+						'console',
 					},
 					size = 0.3,
 					position = 'right',
