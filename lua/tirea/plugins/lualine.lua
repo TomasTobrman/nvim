@@ -67,7 +67,8 @@ return {
 			},
 			winbar = {
 				lualine_a = {},
-				lualine_b = {
+				lualine_b = {},
+				lualine_c = {
 					{
 						'filename',
 						symbols = {
@@ -77,8 +78,6 @@ return {
 							newfile = '',
 						},
 					},
-				},
-				lualine_c = {
 					{
 						'navic',
 						color_correction = nil,
@@ -91,7 +90,8 @@ return {
 			},
 			inactive_winbar = {
 				lualine_a = {},
-				lualine_b = {
+				lualine_b = {},
+				lualine_c = {
 					{
 						'filename',
 						symbols = {
@@ -101,8 +101,6 @@ return {
 							newfile = '',
 						},
 					},
-				},
-				lualine_c = {
 					{
 						'navic',
 						color_correction = nil,
