@@ -29,13 +29,16 @@ return {
 				},
 			},
 
+			eslint = {
+				filetypes = { 'javascript' },
+				rootPatterns = { '.git' },
+			},
+
 			clangd = { filetypes = { 'c', 'cpp' } },
-
 			jdtls = { filetypes = { 'java' } },
-
 			intelephense = { filetypes = { 'php' } },
-
 			pyright = { filetypes = { 'python' } },
+			html = { filetypes = { 'html', 'twig' } },
 		}
 
 		local lspconfig = require('lspconfig')

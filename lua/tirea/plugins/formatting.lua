@@ -7,6 +7,9 @@ return {
 			formatters_by_ft = {
 				c = { 'clang-format' },
 				lua = { 'stylua' },
+				-- twig = { 'djlint' },
+				html = { 'prettierd' },
+				-- css = { 'prettierd' },
 			},
 			format_on_save = {
 				lsp_fallback = true,
